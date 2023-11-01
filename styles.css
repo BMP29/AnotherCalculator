@@ -129,6 +129,18 @@ button[value="←"] {
     }
 }
 
+@media (max-width: 650px) {
+    .calcBody {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 550px) {
+    .calcBody {
+        width: 66vw;
+    }
+}
+
 @media (max-width: 425px) {
     .calcBody {
         width: 70vw;
