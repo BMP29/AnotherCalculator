@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    height: 100%;
+}
+
+:root {
+    --darkBtn: #272b33;
+    --darkKeybr: #292d36;
+    --darkDisplay: #22252d;
+    --operatorsRed: #e94f4f ;
+    --utilityBlue: #26edc9;
+}
+
+body {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+    background-color: gray;
+}
+
+.calcBody, #display, #keyboard, button {
+    border-radius: 15px;
+}
+
+.calcBody {
+    display: grid;  
+    background-color: var(--darkDisplay);
+    height: 85vh;
+    width: 30vw;
+    grid-template-rows: 1fr 1fr 2fr;
+}
+
+#themeMode {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#themeMode > button {
+    height: 50%;
+    flex: 0;
+    flex-basis: 20%;
+}
+
+#themeMode > button:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#themeMode > button:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+#display {
+    width: inherit;
+    font-size: 2rem;
+    background-color: var(--darkDisplay);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: white;
+}
+
+#display > span {
+    text-align: end;
+    padding: 3px 10px;
+}
+
+#display > span:first-child {
+    font-size: 1.3rem;
+}
+
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 35px 15px;
+
+    background-color: var(--darkKeybr);
+}
+
+.line {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    height: 10vh;
+    width: 5vw;
+    border: 0;
+    flex: 1;
+
+    color: white;
+
+    background-color: var(--darkBtn);
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
+
+.line:not(:first-child) > button:last-child, button[value="="] {
+    color: var(--operatorsRed);
+}
+
+.btnUtility {
+    color: var(--utilityBlue);
+}
+
+button[value="←"] {
+    font-size: 2rem;
+}
+
+
+@media (max-width: 1024px) {
+    .calcBody {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 425px) {
+    .calcBody {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 375px) {
+    .calcBody {
+        width: 80vw;
+    }
+}
